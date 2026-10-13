@@ -53,7 +53,7 @@ textarea{min-height:76px;resize:vertical}
 .job{font-weight:600}
 .pill{display:inline-block;background:var(--ac2);color:var(--ac);border-radius:99px;padding:2px 10px;font-size:12px;font-weight:600}
 .match{background:var(--okbg);color:var(--ok);border-radius:8px;padding:6px 10px;font-size:13px;font-weight:600}
-.of,.bu{font-size:14px}.of b{color:var(--ok)}.bu b{color:var(--ac)}
+.of,.bu{font-size:14px;white-space:pre-wrap}.description{white-space:pre-wrap}.of b{color:var(--ok)}.bu b{color:var(--ac)}
 .lk{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;margin-top:4px}
 .lk a{color:var(--ac);text-decoration:none;font-weight:600}
 .empty,.note{text-align:center;color:var(--mut);padding:28px 10px}
@@ -168,7 +168,7 @@ function render(){
       ${p.rama?`<div class="rama">${esc(p.rama)}${p.ciudad?" · "+esc(p.ciudad):""}</div>`:p.ciudad?`<div class="rama">${esc(p.ciudad)}</div>`:""}
       <div class="job">${esc(p.trabajo)}</div>
       ${p.cat?`<div><span class="pill">${esc(p.cat)}</span></div>`:""}
-      ${p.desc?`<div>${esc(p.desc)}</div>`:""}
+      ${p.desc?`<div class="description">${esc(p.desc)}</div>`:""}
       ${p.ofrezco?`<div class="of"><b>Puedo ayudar con:</b> ${esc(p.ofrezco)}</div>`:""}
       ${p.busco?`<div class="bu"><b>Necesito:</b> ${esc(p.busco)}</div>`:""}
       <div class="lk">

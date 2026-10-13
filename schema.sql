@@ -12,9 +12,9 @@ create table public.perfiles (
 alter table public.perfiles enable row level security;
 
 -- Solo cuenta como familia quien se registró con el código correcto
-create function public.es_familia() returns boolean
+create or replace function public.es_familia() returns boolean
 language sql stable as $$
-  select coalesce(auth.jwt() -> 'user_metadata' ->> 'codigo','') = 'CALZADO26'
+  select lower(coalesce(auth.jwt() -> 'user_metadata' ->> 'codigo','')) = 'calzado26'
 $$;
 
 -- Ver el directorio: solo familia
